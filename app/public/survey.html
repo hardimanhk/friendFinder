@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <title>Friend Survey</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Survey Questions</h1>
+        <hr class="my-4">
+        <h2>About You</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Your Name (Required)</label>
+                <input type="input" class="form-control" id="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="photo">Link to Photo Image (Required)</label>
+                <input type="input" class="form-control" id="photo" required>
+            </div>
+        </form>
+        <hr class="my-4">
+        <h2>Question 1</h2>
+        <p>What is your name?</p>
+        <select class="form-control" id="question1">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+        </select>
+        <h2>Question 2</h2>
+        <p>What is your favorite color?</p>
+        <select class="form-control" id="question2">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+        </select>
+        <h2>Question 3</h2>
+        <p>What is your quest?</p>
+        <select class="form-control" id="question3">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+        </select>
+        <h2>Question 4</h2>
+        <p>I love coffe</p>
+        <select class="form-control" id="question4">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+        </select>
+        <h2>Question 5</h2>
+        <p>HTML is a coding language</p>
+        <select class="form-control" id="question5">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+        </select>
+        <h2>Question 6</h2>
+        <p>Crunchy peanut butter is better</p>
+        <select class="form-control" id="question6">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+        </select>
+        <h2>Question 7</h2>
+        <p>San Diego > San Fransisco</p>
+        <select class="form-control" id="question7">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+        </select>
+        <h2>Question 8</h2>
+        <p>Tedeschi Trucks Band > Phish</p>
+        <select class="form-control" id="question8">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+        </select>
+        <h2>Question 9</h2>
+        <p>I like people</p>
+        <select class="form-control" id="question9">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+        </select>
+        <h2>Question 10</h2>
+        <p>This survey is dumb</p>
+        <select class="form-control" id="question10">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+        </select>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <footer>
+        <p>
+            <a href="api/friends">API Friends</a> |
+            <a href="https://github.com/hardimanhk/friendFinder">GitHub Repo</a>
+        </p>
+    </footer>
+    <script src="../data/friends.js" type="text/javascript"></script>
+</body>
+
+</html>
