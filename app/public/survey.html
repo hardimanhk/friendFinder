@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -132,7 +132,45 @@
             <a href="https://github.com/hardimanhk/friendFinder">GitHub Repo</a>
         </p>
     </footer>
-    <script src="../data/friends.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
+                // Here we grab the form elements
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [$("#question1").val(),
+                        $("#question2").val(),
+                        $("#question3").val(),
+                        $("#question4").val(),
+                        $("#question5").val(),
+                        $("#question6").val(),
+                        $("#question7").val(),
+                        $("#question8").val(),
+                        $("#question9").val(),
+                        $("#question10").val()
+                    ]
+                };
+                $("#name").val(""),
+                    $("#photo").val(""),
+                    $("#question1").val("1 (strongly disagre)"),
+                    // $("#question2").val(),
+                    // $("#question3").val(),
+                    // $("#question4").val(),
+                    // $("#question5").val(),
+                    // $("#question6").val(),
+                    // $("#question7").val(),
+                    // $("#question8").val(),
+                    // $("#question9").val(),
+                    // $("#question10").val(),
+                    $.post("/api/friends", newFriend)
+                    .then(function (data) {
+                        console.log(data);
+                    });
+            });
+        });
+    </script>
 </body>
 
 </html>
