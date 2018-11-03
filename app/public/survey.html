@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -152,21 +150,24 @@
                         $("#question10").val()
                     ]
                 };
-                $("#name").val(""),
-                    $("#photo").val(""),
-                    $("#question1").val("1 (strongly disagre)"),
-                    // $("#question2").val(),
-                    // $("#question3").val(),
-                    // $("#question4").val(),
-                    // $("#question5").val(),
-                    // $("#question6").val(),
-                    // $("#question7").val(),
-                    // $("#question8").val(),
-                    // $("#question9").val(),
-                    // $("#question10").val(),
-                    $.post("/api/friends", newFriend)
+                $("#name").val("");
+                $("#photo").val("");
+                $("#question1").val("1 (strongly disagre)");
+                $("#question2").val("1 (strongly disagre)");
+                $("#question3").val("1 (strongly disagre)");
+                $("#question4").val("1 (strongly disagre)");
+                $("#question5").val("1 (strongly disagre)");
+                $("#question6").val("1 (strongly disagre)");
+                $("#question7").val("1 (strongly disagre)");
+                $("#question8").val("1 (strongly disagre)");
+                $("#question9").val("1 (strongly disagre)");
+                $("#question10").val("1 (strongly disagre)");
+                $.post("/api/friends", newFriend)
                     .then(function (data) {
                         console.log(data);
+                        document.body.scrollTop = 0; // For Safari
+                        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                        alert("something");
                     });
             });
         });

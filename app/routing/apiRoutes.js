@@ -6,20 +6,20 @@ module.exports = function(app) {
     });
     app.post("/api/friends", function (req, res) {
         var newFriend = req.body;
-        console.log(newFriend);
+        var difference;
+        var smallestDiff = 1000;
+        var closestFriend = "";
+        for (var i = 0; i < friends.length; i++) {
+            difference = 0;
+            for (var j = 0; j < 10; j++) {
+                difference += Math.abs(parseInt(friends[i].scores[j]) - parseInt(newFriend.scores[j].charAt(0)));
+            }
+            if (difference < smallestDiff) {
+                smallestDiff = difference;
+                closestFriend = friends[i].name;
+            }
+        }
+        friends.push(newFriend);
+        console.log(friends);
     });
 }
-
-// app.post("/api/reservations", function(req, res){
-//     var newTable = req.body;
-//     newTable.id = count;
-//     count++;
-//     if(reservations.length < 5){
-//         reservations.push(newTable);
-//         res.json(reservations);
-//     }else{
-//         waitList.push(newTable);
-//         var position = waitList.length;
-//         res.json(waitList);
-//     }
-// });
